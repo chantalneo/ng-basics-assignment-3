@@ -6,15 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isDisplayDetails = false;
-  clickLogger = [];
+  showSecret = false;
+  log = [];
 
-  onClickDisplayDetails() {
-    this.isDisplayDetails = !this.isDisplayDetails;
-    this.clickLogger.push(new Date().toTimeString());
+  onToggleDetails() {
+    this.showSecret = !this.showSecret;
+    this.log.push(new Date().toTimeString());
   }
 
   getColor(index: number) {
-    return (index >= 4) ? 'blue' : "none";
+    return index >= 4 ? 'blue' : 'none';
   }
 }
